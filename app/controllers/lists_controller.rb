@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :find_list, only: %i[show destroy update]
-  
+
   def index
     @lists = List.all
   end
@@ -32,7 +32,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :image)
   end
 
   def find_list

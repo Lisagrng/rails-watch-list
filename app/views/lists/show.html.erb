@@ -1,1 +1,6 @@
 <h2><%= @list.name %></h2>
+<% if @list.image.attached? %>
+  <%= cl_image_tag @list.image.key, height: 300, width: 400, crop: :fill%>
+  <% else %>
+  <p> Not my problem </p>
+<% end %>
